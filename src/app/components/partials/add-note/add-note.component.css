@@ -1,0 +1,66 @@
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin: 15px 0;
+}
+
+.button {
+  width: 150px;
+  background-color: #445cc9;
+  color: white;
+  font-size: 16px;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 0 5px;
+  outline: none;
+  border: none;
+  transition-duration: 0.2s;
+}
+
+.button:hover {
+  cursor: pointer;
+  background-color: #6175d1;
+  transition-duration: 0.2s;
+}
+
+.form {
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.note-input-title {
+  background-color: #242424;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  font-size: 16px;
+  font-family: "lato";
+  color: white;
+  resize: vertical;
+  min-height: 30px;
+  height: 30px;
+  padding: 5px;
+  font-size: 20px;
+}
+
+.note-input-content {
+  background-color: #242424;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  font-size: 16px;
+  font-family: "lato";
+  color: white;
+  resize: vertical;
+  min-height: 60px;
+  height: 60px;
+  padding: 5px;
+}
+
+.button-wrapper {
+  display: flex;
+  justify-content: center;
+}

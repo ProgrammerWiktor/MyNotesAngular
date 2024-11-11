@@ -1,0 +1,9 @@
+<app-add-note></app-add-note>
+<div class="container">
+  <ul *ngIf="notes">
+    <li *ngFor="let note of notes">
+      <app-note [note]="note" routerLink="/note-details/{{note.key}}" (refreshNotes)="getAllNotes()"></app-note>
+    </li>
+  </ul>
+  <app-not-found *ngIf="!notes || !notes.length"></app-not-found>
+</div>

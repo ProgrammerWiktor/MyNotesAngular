@@ -1,0 +1,15 @@
+<div class="container">
+  <span class="title" [routerLink]="isAuthenticated ? '/notes' : '/'">MyNotes</span>
+  <div class="wrapper">
+    <nav>
+      <ul>
+        <li *ngIf="!isAuthenticated">
+          <a routerLink="/login">Zaloguj się</a>
+        </li>
+        <li *ngIf="isAuthenticated">
+          <a (click)="onLogout()">Wyloguj się</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>

@@ -1,0 +1,13 @@
+<div class="container">
+  <button type="button" class="button" *ngIf="!isFormShown" (click)="toggle()">
+    Dodaj notatkę
+  </button>
+  <form class="form" *ngIf="isFormShown" [formGroup]="newNoteForm" (ngSubmit)="onSubmit()">
+    <textarea class="note-input-title" placeholder="Tytuł notatki" formControlName="title" id="note-input-title"></textarea>
+    <textarea class="note-input-content" placeholder="Zawartość notatki" formControlName="content" id="note-input-content"></textarea>
+    <div class="button-wrapper">
+      <button type="submit" class="button">Dodaj</button>
+      <button type="button" class="button" (click)="toggle()">Anuluj</button>
+    </div>
+  </form>
+</div>

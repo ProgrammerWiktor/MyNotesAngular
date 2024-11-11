@@ -1,0 +1,18 @@
+<div class="container">
+  <form class="form" *ngIf="!isNoteNotFound">
+    <textarea class="note-input-title" #noteTitle id="note-input-title">{{ note.title }}</textarea>
+    <textarea class="note-input-content" #noteContent id="note-input-content">{{ note.content }}</textarea>
+    <div class="button-wrapper">
+      <button type="button" class="button" (click)="editNote(noteTitle.value, noteContent.value)">
+        <span *ngIf="!isEditing">Edytuj</span>
+        <mat-spinner color="accent" diameter="25" *ngIf="isEditing"></mat-spinner>
+      </button>
+      <button type="button" class="button" (click)="deleteNote()">
+        <span *ngIf="!isDeleting">Usuń notatkę</span>
+        <mat-spinner color="accent" diameter="25" *ngIf="isDeleting"></mat-spinner>
+      </button>
+      <button type="button" class="button" routerLink="/notes">Wróć</button>
+    </div>
+  </form>
+  <app-not-found *ngIf="isNoteNotFound" [isInWrongPath]="true"></app-not-found>
+</div>

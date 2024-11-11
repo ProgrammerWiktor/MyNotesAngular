@@ -1,0 +1,6 @@
+<div class="container">
+  <div class="info" *ngIf="isInWrongPath">Nie znaleziono notatki :(</div>
+  <div class="info" *ngIf="!isInWrongPath">Trochę tu pusto</div>
+  <div class="info-small" *ngIf="!isInWrongPath">Spróbuj dodać jakąś notatkę</div>
+  <button class="button" routerLink="/notes" *ngIf="isInWrongPath">Wróć</button>
+</div>

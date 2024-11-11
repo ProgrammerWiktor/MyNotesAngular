@@ -1,0 +1,30 @@
+<div class="container">
+  <form class="login-form" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <p class="title">Zarejestruj się</p>
+
+    <label for="email" class="label">Email</label>
+    <input type="email" class="input" id="email" placeholder="Wpisz swój Email" formControlName="email">
+    <div class="alert-box">
+      <div class="alert" *ngIf="registerForm.controls['email'].invalid && registerForm.controls['email'].touched">Podaj prawidłowy email</div>
+    </div>
+
+    <label for="password1" class="label">Hasło</label>
+    <input type="password" class="input" id="password1" placeholder="Wpisz swoje hasło" formControlName="password1">
+    <div class="alert-box">
+      <div class="alert" *ngIf="registerForm.controls['password1'].invalid && registerForm.controls['password1'].touched">Hasło musi mieć minimum 6 znaków</div>
+    </div>
+
+    <label for="password2" class="label">Powtórz hasło</label>
+    <input type="password" class="input" id="password2" placeholder="Wpisz ponownie swoje hasło" formControlName="password2">
+    <div class="alert-box">
+      <div class="alert" *ngIf="registerForm.controls['password2'].errors?.['confirmedValidator'] && registerForm.controls['password2'].touched">Podanie hasła nie są takie same</div>
+    </div>
+
+    <button type="submit" class="button" [disabled]="registerForm.invalid">
+      <span *ngIf="!isLoggingIn">Zarejestruj się</span>
+      <mat-spinner color="accent" diameter="25" *ngIf="isLoggingIn"></mat-spinner>
+    </button>
+
+    <p class="register-text">Lub <a class="register-link" routerLink="/login">Zaluguj się</a></p>
+  </form>
+</div>
